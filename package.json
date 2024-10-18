@@ -35,6 +35,7 @@
   },
   "config": {
     "slack_url": null,
+    "slack_channel": null,
     "log": false,
     "error": true,
     "kill": true,

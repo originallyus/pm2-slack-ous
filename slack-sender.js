@@ -8,6 +8,7 @@ module.exports = { sendToSlack };
 // Dependency
 const request = require('request');
 const os = require('os');
+const { channel } = require('diagnostics_channel');
 
 
 // Constants
@@ -73,6 +74,8 @@ function sendToSlack(messages, config) {
             ts: Math.floor(Date.now() / 1000),
         });
     }
+    if (!config.channel) {
+        payload.channel = config.channel;
 
     // Options for the post request
     const requestOptions = {
