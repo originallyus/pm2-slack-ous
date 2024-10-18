@@ -8,6 +8,7 @@ module.exports = { sendToSlack };
 // Dependency
 const request = require('request');
 const os = require('os');
+const { channel } = require('diagnostics_channel');
 
 
 // Constants
@@ -27,7 +28,7 @@ function sendToSlack(messages, config) {
 
     // If a Slack URL is not set, we do not want to continue and nofify the user that it needs to be set
     if (!config.slack_url) {
-        return console.error("There is no Slack URL set, please set the Slack URL: 'pm2 set pm2-slack:slack_url https://slack_url'");
+        return console.error("There is no Slack URL set, please set the Slack URL: 'pm2 set pm2-slack-custom:slack_url https://slack_url'");
     }
 
     let limitedCountOfMessages;
@@ -73,11 +74,13 @@ function sendToSlack(messages, config) {
             ts: Math.floor(Date.now() / 1000),
         });
     }
+    const channel = config.slack_channel || null;
+    const username = config.username || "PM2-SLACK";
 
     // Options for the post request
     const requestOptions = {
         method: 'post',
-        body: payload,
+        body: { ...payload, channel: channel, username: username },
         json: true,
         url: config.slack_url,
     };
