@@ -1,23 +1,24 @@
 {
   "name": "pm2-slack-ous",
-  "version": "1.1.9",
-  "description": "A PM2 module to emit events to Slack",
+  "version": "1.1.10",
+  "description": "A PM2 module to emit events to Slack, with modification to allow 'channel' customization",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattpker/pm2-slack"
+    "url": "https://github.com/originallyus/pm2-slack-ous"
   },
   "keywords": [
     "pm2",
-    "slack"
+    "slack",
+    "ous"
   ],
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mattpker/pm2-slack/blob/master/LICENSE"
+      "url": "https://github.com/originallyus/pm2-slack-ous/blob/master/LICENSE"
     }
   ],
   "dependencies": {
