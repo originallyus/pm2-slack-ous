@@ -1,16 +1,16 @@
-# pm2-slack-with-channel
+# pm2-slack-ous
 
 This is a PM2 Module for sending events & logs from your PM2 processes to Slack.
-This repo an extended version of abandoned project: https://github.com/mattpker/pm2-slack, with modification to allow 'channel' customization
+This repo an extended version of abandoned project: https://github.com/mattpker/pm2-slack, with modification to allow 'channel' customization.
 
 ## Install
 
-To install and setup pm2-slack-with-channel, run the following commands:
+To install and setup pm2-slack-ous, run the following commands:
 
 ```
-pm2 install pm2-slack-with-channel
-pm2 set pm2-slack:slack_url "https://slack_url"
-pm2 set pm2-slack:channel "#your_channel"
+pm2 install pm2-slack-ous
+pm2 set pm2-slack-ous:slack_url "https://slack_url"
+pm2 set pm2-slack-ous:channel "#your_channel"
 ```
 
 To get the Slack URL, you need to setup an Incoming Webhook. More details on how to set this up can be found here: https://api.slack.com/incoming-webhooks
