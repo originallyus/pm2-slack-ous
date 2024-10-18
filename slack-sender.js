@@ -28,7 +28,7 @@ function sendToSlack(messages, config) {
 
     // If a Slack URL is not set, we do not want to continue and nofify the user that it needs to be set
     if (!config.slack_url) {
-        return console.error("There is no Slack URL set, please set the Slack URL: 'pm2 set pm2-slack-custom:slack_url https://slack_url'");
+        return console.error("There is no Slack URL set, please set the Slack URL: 'pm2 set pm2-slack-ous:slack_url https://slack_url'");
     }
 
     let limitedCountOfMessages;
@@ -74,7 +74,7 @@ function sendToSlack(messages, config) {
             ts: Math.floor(Date.now() / 1000),
         });
     }
-    const channel = config.slack_channel || null;
+    const channel = config.channel || null;
     const username = config.username || "PM2-SLACK";
 
     // Options for the post request

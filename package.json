@@ -1,5 +1,5 @@
 {
-  "name": "pm2-slack-custom",
+  "name": "pm2-slack-ous",
   "version": "1.1.9",
   "description": "A PM2 module to emit events to Slack",
   "main": "index.js",
@@ -27,7 +27,7 @@
   },
   "config": {
     "slack_url": null,
-    "slack_channel": null,
+    "channel": null,
     "log": false,
     "error": true,
     "kill": true,
