@@ -107,7 +107,7 @@ pm2 set pm2-slack-ous:servername-foo Bar-server
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
-- 1.1.9 Support 'channel' option.
+- 1.1.10 Support 'channel' option.
 - 1.1.0 Custom options can be defined to each PM2 process.
         Displaying process ID of cluster mode processes (thanks @abawchen). 
 - 1.0.0 Message bufferring refactored. Message grouping refactored.
