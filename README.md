@@ -35,8 +35,8 @@ The following events can be subscribed to:
 You can simply turn these on and off by setting them to true or false using the PM2 set command.
 
 ```
-pm2 set pm2-slack:log true
-pm2 set pm2-slack:error false
+pm2 set pm2-slack-ous:log true
+pm2 set pm2-slack-ous:error false
 ```
 
 ## Options
@@ -58,8 +58,8 @@ Set these options in the same way as subscribing to events.
 The following configuration options will enable message buffering, and set the buffer duration to 5 seconds. All messages that occur within maximum 5 seconds delay between two neighboring messages will be concatenated into a single slack message.
 
 ```
-pm2 set pm2-slack:slack_url https://hooks.slack.com/services/123456789/123456789/aaaaaaa
-pm2 set pm2-slack:buffer_seconds 5
+pm2 set pm2-slack-ous:slack_url https://hooks.slack.com/services/123456789/123456789/aaaaaaa
+pm2 set pm2-slack-ous:buffer_seconds 5
 ```
 
 Note: In this example, the maximum total delay for messages is still 20 seconds (default value for `buffer_max_seconds`). After this time, the buffer will be flushed
@@ -83,21 +83,21 @@ Same buffer options will be used for all processed.
 
 ```
 # Define global options for all processes.
-pm2 set pm2-slack:buffer_seconds 5
+pm2 set pm2-slack-ous:buffer_seconds 5
 
 # Define global options for all processes.
 #   (for process `foo` and `bar` the values will be overridden below).
-pm2 set pm2-slack:slack_url https://hooks.slack.com/services/123456789/123456789/aaaaaaa
-pm2 set pm2-slack:servername Orion
+pm2 set pm2-slack-ous:slack_url https://hooks.slack.com/services/123456789/123456789/aaaaaaa
+pm2 set pm2-slack-ous:servername Orion
 
 # Define custom Slack Incomming Webhoook for `foo` process.
-pm2 set pm2-slack:slack_url-foo https://hooks.slack.com/services/123456789/123456789/bbbbbbb
-pm2 set pm2-slack:servername-foo Foo-server
+pm2 set pm2-slack-ous:slack_url-foo https://hooks.slack.com/services/123456789/123456789/bbbbbbb
+pm2 set pm2-slack-ous:servername-foo Foo-server
 # Note: The `pm2-slack:buffer_seconds`=5 will be used from global options for this process. 
 
 # Define custom Slack Incomming Webhoook for `bar` process
-pm2 set pm2-slack:slack_url-bar https://hooks.slack.com/services/123456789/123456789/ccccccc
-pm2 set pm2-slack:servername-foo Bar-server
+pm2 set pm2-slack-ous:slack_url-bar https://hooks.slack.com/services/123456789/123456789/ccccccc
+pm2 set pm2-slack-ous:servername-foo Bar-server
 # Note: The `pm2-slack:buffer_seconds`=5 will be used from global options for this process. 
 ```
   
@@ -107,6 +107,7 @@ pm2 set pm2-slack:servername-foo Bar-server
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Release History
+- 1.1.9 Support 'channel' option.
 - 1.1.0 Custom options can be defined to each PM2 process.
         Displaying process ID of cluster mode processes (thanks @abawchen). 
 - 1.0.0 Message bufferring refactored. Message grouping refactored.
